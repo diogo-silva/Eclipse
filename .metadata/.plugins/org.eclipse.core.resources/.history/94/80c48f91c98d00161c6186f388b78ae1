@@ -1,0 +1,23 @@
+package package_test;
+
+import processing.core.*;
+
+public class MyPApplet extends PApplet {
+	private String URL = "/home/diogo/Pictures/teste.png";
+	private PImage backgroundImg;
+
+	public void setup() {
+		size(500, 500);
+		backgroundImg = loadImage(URL, "png");
+	}
+
+	public void draw() {
+		backgroundImg.resize(0,height);
+		image(backgroundImg, 0, 0);
+		fill(255,255,0);
+		ellipse(width/2,height/2,width/3,height/3);
+
+		fill(0,0,0);
+		ellipse(width*(1/2-1/8),height*(1/2+1/8),width/10,height/10);
+	}
+}
